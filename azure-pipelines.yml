@@ -23,7 +23,7 @@ steps:
   displayName: Restore
   inputs:
     command: restore
-    projects: '**/Demo.SeleniumTests.csproj'
+    projects: '**/*.csproj'
 
 # publish the UI test project to the SeleliumTest subfolder in the Artifact Staging Directory
 # optionally, you can add more steps to publish your own website alongside your SeleniumTests in another task
@@ -32,7 +32,7 @@ steps:
   inputs:
     command: publish
     publishWebProjects: false
-    projects: '**/Demo.SeleniumTests.csproj'
+    projects: '**/*.csproj'
     arguments: '--configuration Release --output $(build.artifactstagingdirectory)/SeleniumTests'
     zipAfterPublish: true
     modifyOutputPath: false
